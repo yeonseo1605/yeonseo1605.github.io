@@ -1,0 +1,1 @@
+self.addEventListener('install',e=>e.waitUntil(self.skipWaiting()));self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const k of await caches.keys())if(/^my-calendar-v/.test(k))await caches.delete(k);await self.clients.claim();await self.registration.unregister()})()));
